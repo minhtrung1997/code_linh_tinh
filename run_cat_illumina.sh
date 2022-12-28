@@ -1,3 +1,4 @@
+#!/bin/bash
 sample1=$(basename $1 | cut -d'_' -f 2 | sed 's/S//')
 sample2=$(basename $2 | cut -d'_' -f 2| sed 's/S//')
 dir=$(dirname $1)
@@ -11,7 +12,7 @@ prefix_b1=$(basename $2 | cut -d'_' -f 4)
 # 	exit 1
 # fi
 
-sample_merge=$(awk "BEGIN {print int(($sample1+$sample2)/2)}")
+sample_merge=$(awk "BEGIN {print int(($sample1+$sample2)+22)}")
 echo -e $sample1
 echo -e $sample2
 echo -e $sample_merge

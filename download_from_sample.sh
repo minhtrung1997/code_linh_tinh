@@ -1,3 +1,4 @@
+## Usage bash <code> <Accession> <name_you_want>
 if [ ! -s .${1}_${2}.list ]; then
 	esearch -db sra -query $1 | efetch -format runinfo | cut -d ',' -f 1 | grep SRR > .${1}_${2}.list
 	prefetch --option-file .${1}_${2}.list -p -O ${1}_${2}
